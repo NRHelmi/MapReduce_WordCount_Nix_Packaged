@@ -1,0 +1,2 @@
+#/bin/bash
+java -jar OUT/lib/wordcount-0.1-jar-with-dependencies.jar $1 $2
