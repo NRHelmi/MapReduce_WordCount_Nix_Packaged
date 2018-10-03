@@ -1,6 +1,7 @@
 SHELL := /usr/bin/env bash
 MVN := $(shell which mvn)
 NIX_BUILD := $(shell which nix-build)
+NIX_ENV := $(shell which nix-env)
 
 install:
 	cd .. && \
@@ -16,3 +17,10 @@ package:
 build:
 	cd .. && \
 	$(NIX_BUILD)
+install_to_env:
+	cd .. && \
+	$(NIX_ENV) -if default.nix
+remove_from_env:
+	cd .. && \
+	$(NIX_ENV) -e wordCount
+
